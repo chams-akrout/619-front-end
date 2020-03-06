@@ -1,0 +1,115 @@
+<html>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<body>
+    <div class="container register">
+        <div class="container register row">
+            <div class="col-md-3 register-left">
+
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link " id="login-tab" data-toggle="tab" href="login" role="tab" aria-controls="login" aria-selected=" false ">connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" id="newuser-tab" data-toggle="tab" href="" role="tab" aria-controls="newuser" aria-selected="true">Inscrire</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <p class="register-heading">Inscription</p>
+
+
+
+
+
+                        <form (ngSubmit)="inscrire(signupForm.value)" [formGroup]="signupForm">
+                            <div class="row register-form">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Nom *" value="" required formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.Name.errors  }" />
+                                        <div *ngIf="submitted && f.name.errors ">
+                                            <mat-error *ngIf="f.name.errors.required">
+                                                Veuillez entre votre nom.
+                                            </mat-error>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Prenom *" value="" required formControlName="lastName" [ngClass]="{ 'is-invalid': submitted && f.LastName.errors  }" />
+                                        <div *ngIf="submitted && f.lastName.errors ">
+                                            <mat-error *ngIf="f.lastName.errors.required">
+                                                Veuillez entre votre prénom.
+                                            </mat-error>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <input type="text" minlength="10" maxlength="10" name="adresse" class="form-control" placeholder="Adresse *" value="" required formControlName="address" [ngClass]="{ 'is-invalid': submitted && f.adresse.errors }" />
+                                        <div *ngIf="submitted && f.address.errors">
+                                            <mat-error *ngIf="f.address.errors.required">
+                                                Veuillez entre votre adresse.
+                                            </mat-error>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="email" placeholder="Email *" value="" required formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors  }" />
+                                        <div *ngIf="submitted && f.email.errors ">
+                                            <mat-error *ngIf="f.email.errors.required">
+                                                Veuillez entre votre Email.
+                                            </mat-error>
+                                            <mat-error *ngIf="f.email.errors.email">
+                                                verifier votre Email.
+                                            </mat-error>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Mot De Passe *" value="" required formControlName="mdp" [ngClass]="{ 'is-invalid': submitted && f.mdp.errors }" />
+                                        <div *ngIf="submitted && f.mdp.errors ">
+
+                                            <mat-error *ngIf="f.mdp.errors.required">
+                                                Veuillez entre votre Mot de passe.
+                                            </mat-error>
+                                            <mat-error *ngIf="f.mdp.errors.minlength">
+                                                Votre Mot de passe doit être au moins 3 charactéres.
+                                            </mat-error>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+
+
+
+                                        <input type="password" class="form-control" placeholder="confirme Mot De Passe *" value="" ng-required formControlName="cmdp" [ngClass]="{ 'is-invalid': submitted && f.cmdp.errors }" />
+                                        <div *ngIf="submitted && f.cmdp.errors ">
+
+                                            <mat-error *ngIf="submitted && f.cmdp.errors.required">
+                                                Veuillez confirme votre Mot de passe.
+                                            </mat-error>
+                                            <mat-error *ngIf="submitted && f.cmdp.errors.mustMatch">
+                                                Votre Mot de passe n'est pas correcte.
+                                            </mat-error>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button class="btnRegister">s'inscrire</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

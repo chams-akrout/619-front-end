@@ -1,0 +1,99 @@
+<html>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- login start -->
+
+
+
+
+<body>
+    <div class="container register">
+        <div class="row">
+            <div class="col-md-3 register-left">
+                <img src="/assets/images/logo.png" alt="" />
+                <!-- <h3>Welcome</h3> -->
+
+            </div>
+
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="login-tab" data-toggle="tab" href="login" role="tab" aria-controls="login" aria-selected="true">Seconnecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="newuser-tab" data-toggle="tab" href="" role="tab" aria-controls="newuser" aria-selected="false">S'inscrire</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                        <h3 class="register-heading"></h3>
+                        <form (ngSubmit)=" login(loginForm.value)" [formGroup]="loginForm">
+                            <div class="row register-form">
+                                <div class="col-md-6">
+
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group">
+                                        <input type="email" placeholder="Entrez votre Email*" class="form-control" required formControlName="email" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.email.errors  }">
+                                        <div *ngIf="submitted && loginForm.controls.email.errors">
+                                            <mat-error *ngIf="loginForm.controls.email.errors.required">
+                                                Veuillez entre votre Email.
+                                            </mat-error>
+                                            <mat-error *ngIf="loginForm.controls.email.errors.email">
+                                                verifier votre Email.
+                                            </mat-error>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" placeholder="Mot De Passe *" value="" required formControlName="mdp" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.mdp.errors }" />
+                                        <div *ngIf="submitted && loginForm.controls.mdp.errors ">
+
+                                            <mat-error *ngIf="loginForm.controls.mdp.errors.required">
+                                                Veuillez entrer votre Mot de passe.
+                                            </mat-error>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <button class="btnRegister">Login</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="tab-pane fade show" id="newuser" role="tabpanel" aria-labelledby="newuser-tab">
+    <h3 class="register-heading">New User</h3>
+    <div class="row register-form">
+    <div class="col-md-6">
+       
+        <div class="form-group">
+            <input matInput placeholder="Entrez votre Email" required formControlName="email">
+                        <div
+                            *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">
+    
+                            <mat-error *ngIf="loginForm.controls.email.errors.required">
+                                Veuillez entre votre Email.
+                            </mat-error>
+        </div>
+        
+    
+    </div>
+    
+    </div>
+    </div>
+    </div> -->
+        </div>
+    </div>
+
+</body>
+
+</html>
