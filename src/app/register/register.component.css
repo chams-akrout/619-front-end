@@ -4,13 +4,15 @@ body {
     left: 0;
     z-index: -1;
     margin: 0;
+    overflow: hidden;
+    /* Hide scrollbars */
     padding: 0;
     -webkit-background-size: cover;
     background-size: cover;
 }
 
 .register {
-    margin-top: 3%;
+    margin-top: 1%;
     padding: 3%;
 }
 

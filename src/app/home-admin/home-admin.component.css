@@ -1,0 +1,71 @@
+body {
+    overflow: hidden;
+}
+
+a {
+    color: rgb(0, 0, 0);
+}
+
+a:hover,
+a:active {
+    color: rgb(22, 114, 53);
+}
+
+.cursM {
+    cursor: pointer;
+    position: absolute;
+}
+
+.nav-caption {
+    display: inline-block;
+    padding-left: 6px;
+    cursor: pointer;
+}
+
+.nav-list {
+    display: inline-block;
+    padding-left: 6px;
+    cursor: context-menu;
+}
+
+.example-container {
+    width: 100%;
+    height: 100%;
+    background-color: transparent !important;
+}
+
+mat-sidenav {
+    background-color: rgb(240, 240, 240);
+}
+
+mat-menu {
+    background-color: rgb(9, 36, 43);
+}
+
+.logo {
+    position: relative;
+    width: 57%;
+    left: 15%;
+    height: 20%;
+}
+
+.pr {
+    position: relative;
+    left: 80%;
+    color: rgb(22, 179, 74);
+}
+
+.SO {
+    position: relative;
+    left: 82%;
+    color: rgb(22, 179, 74);
+}
+
+.titre {
+    position: relative;
+    left: 2%;
+}
+
+.toolbar {
+    color: rgb(22, 179, 74);
+}

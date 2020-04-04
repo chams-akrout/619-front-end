@@ -1,1 +1,60 @@
-<p>connecter en tant que admin  !!!</p>
+<mat-toolbar class="toolbar">
+    <mat-toolbar-row>
+        <p class="cursM" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" color="primary">
+            <mat-icon>menu</mat-icon>
+        </p>
+
+        <a class="pr">Profile</a>
+        <a class="SO" (click)="logout()">Se déconnecter</a>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #drawer mode="side" role="navigation">
+        <img src="assets/logo.png" class="logo">
+        <mat-nav-list>
+            <a mat-list-item routerLink="/home/admin" (click)="onSidenavClose()">
+                <mat-icon>home</mat-icon>
+                <span class="nav-caption">Acceuil</span>
+            </a>
+
+
+            <mat-list-item [matMenuTriggerFor]="menu1">
+                <mat-icon>toc</mat-icon>
+                <a matline>Gérer les catégories</a>
+            </mat-list-item>
+            <mat-menu #menu1="matMenu">
+                <a mat-list-item routerLink="/categories" (click)="onSidenavClose()">
+                    <mat-icon>list</mat-icon>
+                    <span class="nav-list">Afficher la liste des catégories</span>
+                </a>
+                <a mat-list-item (click)="openDialogCat()">
+                    <mat-icon>add</mat-icon>
+                    <span class="nav-caption">Ajouter une catégorie</span>
+                </a>
+            </mat-menu>
+
+            <mat-list-item [matMenuTriggerFor]="menu">
+                <mat-icon>toc</mat-icon>
+                <a matline>Gérer les produits</a>
+            </mat-list-item>
+            <mat-menu #menu="matMenu">
+                <a mat-list-item routerLink="/products" (click)="onSidenavClose()">
+                    <mat-icon>list</mat-icon>
+                    <span class="nav-list">Afficher la liste des produits</span>
+                </a>
+                <a mat-list-item (click)="openDialogP()">
+                    <mat-icon>add</mat-icon>
+                    <span class="nav-caption">Ajouter un produit</span>
+                </a>
+            </mat-menu>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<body></body>

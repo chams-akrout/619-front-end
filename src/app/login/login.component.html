@@ -13,24 +13,21 @@
     <div class="container register">
         <div class="row">
             <div class="col-md-3 register-left">
-                <img src="/assets/images/logo.png" alt="" />
-                <!-- <h3>Welcome</h3> -->
-
             </div>
 
             <div class="col-md-9 register-right">
                 <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link active" id="login-tab" data-toggle="tab" href="login" role="tab" aria-controls="login" aria-selected="true">Seconnecter</a>
+                        <a class="nav-link active" id="login-tab" data-toggle="tab" href="" role="tab" aria-controls="login" aria-selected="true">Se connecter</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="newuser-tab" data-toggle="tab" href="" role="tab" aria-controls="newuser" aria-selected="false">S'inscrire</a>
+                        <a class="nav-link" id="newuser-tab" data-toggle="tab" href="register" role="tab" aria-controls="newuser" aria-selected="false">S'inscrire</a>
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                         <h3 class="register-heading"></h3>
-                        <form (ngSubmit)=" login(loginForm.value)" [formGroup]="loginForm">
+                        <form (ngSubmit)="login(loginForm.value)" [formGroup]="loginForm">
                             <div class="row register-form">
                                 <div class="col-md-6">
 
@@ -50,10 +47,10 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="password" class="form-control" placeholder="Mot De Passe *" value="" required formControlName="mdp" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.mdp.errors }" />
-                                        <div *ngIf="submitted && loginForm.controls.mdp.errors ">
+                                        <input type="password" class="form-control" placeholder="Mot De Passe *" value="" required formControlName="password" [ngClass]="{ 'is-invalid': submitted && loginForm.controls.password.errors }" />
+                                        <div *ngIf="submitted && loginForm.controls.password.errors ">
 
-                                            <mat-error *ngIf="loginForm.controls.mdp.errors.required">
+                                            <mat-error *ngIf="loginForm.controls.password.errors.required">
                                                 Veuillez entrer votre Mot de passe.
                                             </mat-error>
 
@@ -74,20 +71,20 @@
     <h3 class="register-heading">New User</h3>
     <div class="row register-form">
     <div class="col-md-6">
-       
+
         <div class="form-group">
             <input matInput placeholder="Entrez votre Email" required formControlName="email">
                         <div
                             *ngIf="loginForm.controls.email.invalid && (loginForm.controls.email.dirty || loginForm.controls.email.touched)">
-    
+
                             <mat-error *ngIf="loginForm.controls.email.errors.required">
                                 Veuillez entre votre Email.
                             </mat-error>
         </div>
-        
-    
+
+
     </div>
-    
+
     </div>
     </div>
     </div> -->

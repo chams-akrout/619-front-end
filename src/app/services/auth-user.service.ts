@@ -6,8 +6,9 @@ import { HttpClient,HttpResponse,HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+    //'Content-Type':  'application/json',
+    'Access-Control-Allow-Origin':'*',
+    //'Authorization': 'my-auth-token'
   })
 };
 
@@ -15,24 +16,20 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthUserService {
-  private userssUrl = 'http://localhost:9080/users';
+  private regUrl = 'http://localhost:9080/registration';
+  private logInUrl = 'http://localhost:9080/login';
   headers: HttpHeaders;
   response:HttpResponse<any>;
   //options: RequestOptions;
-  constructor(private http: HttpClient) {
-    // this.headers = new HttpHeaders({
-    //  'content-Type': 'application/json',
-    //  'Access-Control-Allow-Origin': '*'
-    // });
-   // this.options = new RequestOptions({ headers: this.headers });
-  }
-  
+  constructor(private http: HttpClient) {}
+
   createUser(user: ConsommateurModule): Observable<ConsommateurModule> {
-    return this.http.post(this.userssUrl, JSON.stringify(user), httpOptions)
-    .map((res: HttpResponse<any>) => res.body.json());
+    // return this.http.post(this.regUrl, JSON.stringify(user), httpOptions)
+    // .map((res: HttpResponse<any>) => res.body.json());
+    return this.http.post(this.regUrl,user,httpOptions);
   }
-login(email:string):Observable<ConsommateurModule>{
-  return this.http.post(`${this.userssUrl}/home`,email, httpOptions)
-  .map((res: HttpResponse<any>) => res.body.json());
+
+login(user: any):Observable<any>{
+  return this.http.post(this.logInUrl,user,httpOptions);
 }
 }

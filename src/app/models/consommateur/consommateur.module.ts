@@ -9,6 +9,7 @@ export class ConsommateurModule {
             public lastName?: string,
             public address?: string,
             public email?: string,
-            public role?:string
+            public role?:string,
+            public enabled?:boolean
   ){}
 }

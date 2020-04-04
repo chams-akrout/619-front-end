@@ -1,0 +1,44 @@
+mat-label {
+    color: rgb(0, 0, 0) !important;
+    font-weight: 100;
+}
+
+form {
+    text-align: center;
+}
+
+mat-dialog-actions {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    left: 15%;
+}
+
+h3 {
+    text-align: center;
+    color: rgb(44, 88, 114);
+}
+
+.edit {
+    position: relative;
+    margin-right: 15px;
+    height: 37%;
+    left: 130%;
+    width: 80%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 20px;
+    color: rgb(39, 32, 32) !important;
+    top: -64%;
+}
+
+.close {
+    position: relative;
+    margin-right: 15px;
+    height: 37%;
+    left: 35%;
+    width: 80%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 20px;
+    color: rgb(39, 32, 32) !important;
+    top: -15%;
+}

@@ -5,56 +5,54 @@ import { ConsommateurModule } from 'src/app/models/consommateur/consommateur.mod
 import {MustMatch} from 'src/app/validators/validators.module';
 import { AuthUserService } from 'src/app/services/auth-user.service';
 import { Observable, throwError } from 'rxjs';
-
+import { LoginAuthService } from '../services/login-auth.service';
 
 @Component({
-  selector: 'app-inscrire',
-  templateUrl: './inscrire.component.html',
-  styleUrls: ['./inscrire.component.css']
+  selector: 'app-register',
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.css']
 })
-export class InscrireComponent implements OnInit {
+export class RegisterComponent implements OnInit {
+
   signupForm: FormGroup;
   consommateur: ConsommateurModule;
   submitted = false;
-  
+
   // private router: Router,private formBuilder: FormBuilder
-  constructor(private formBuilder: FormBuilder,private router :Router,private authService: AuthUserService) {
-    
+  constructor(private formBuilder: FormBuilder,private router :Router,private authService: AuthUserService,private loginAuthService: LoginAuthService) {
+    this.loginAuthService.isLoggedIn();
    }
-   
+
 
   ngOnInit(): void {
     this.signupForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      mdp: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
       cmdp: ['', [Validators.required]],
-     name: ['', [Validators.required]],
+      name: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
-      address: ['', [Validators.required]]},{
-    
-      validators:[MustMatch('mdp','cmdp')]
-    });
+      address: ['', [Validators.required]]},
+      { validators:[MustMatch('password','cmdp')]}
+    );
   }
   get f() { return this.signupForm.controls; }
 
 
   inscrire(value) {
-    this.submitted= true; 
-    console.log(value)
+    this.submitted= true;
     this.consommateur=value;
-    // this.consommateur.password = this.signupForm.controls.mdp.value;
-    // this.consommateur.name = this.signupForm.controls.name.value;
-    // this.consommateur.lastName = this.signupForm.controls.lastName.value;
-    // this.consommateur.address = this.signupForm.controls.address.value;
-    this.consommateur.role="user";
-this.authService.createUser(this.consommateur)
+    this.consommateur.role="USER";
+    this.consommateur.enabled=true;
+    this.consommateur.score=10;
+    this.authService.createUser(this.consommateur)
       .subscribe(data => { return true },
-        error => { 
+        error => {
           console.log("Error");
           return throwError(error);
         });
        console.log("ajout avec succés");
        this.router.navigate([ '/home/consommateur']);
   }
+
 
 }

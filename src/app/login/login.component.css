@@ -5,6 +5,7 @@ body {
     z-index: -1;
     margin: 0;
     padding: 0;
+    overflow: hidden;
     -webkit-background-size: cover;
     background-size: cover;
 }
@@ -115,7 +116,7 @@ body {
 }
 
 .register .nav-tabs .nav-link.active {
-    width: 100px;
+    width: 120px;
     color: #04a56d;
     border: 2px solid #04a56d;
     border-top-left-radius: 1.5rem;

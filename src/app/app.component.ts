@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginAuthService } from './services/login-auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ScannerCode';
+  title = 'Barcode Scanner';
+
+// public currentStatus:any;
+//   constructor(private loginAuthService: LoginAuthService) {
+
+//     this.currentStatus=this.loginAuthService.getStatus().subscribe(currentStatus  => {
+//       this.currentStatus=currentStatus;
+//     })
+//    } 1h38!!!!!!!!!!!!
 }
