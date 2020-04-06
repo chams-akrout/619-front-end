@@ -14,16 +14,16 @@ private caturl='http://localhost:9080/categories';
   }
 
 
-  createCat(category: Category,token:any): Observable<Category> {
+  createCat(category: any,token:any): Observable<any> {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
-    return this.http.post(this.caturl,JSON.stringify(category), { headers: headers });
+    return this.http.post(this.caturl,category, { headers: headers });
   }
 
 
-  updateCat(category: Category,token:any): Observable<Category> {
+  updateCat(category: any,token:any): Observable<any> {
     const url = `${this.caturl}/${category.id}`;
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
-    return this.http.put(url, JSON.stringify(category), { headers: headers });
+    return this.http.put(url,category, { headers: headers });
 
   }
 
@@ -41,7 +41,7 @@ private caturl='http://localhost:9080/categories';
   deleteCat(id:number,token:any): Observable<any> {
     const url = `${this.caturl}/${id}`;
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
-    return this.http.delete(url, { headers: headers });
+    return this.http.delete(url, { headers: headers,responseType: 'text' });
 
   }
 

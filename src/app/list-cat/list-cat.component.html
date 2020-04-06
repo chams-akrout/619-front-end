@@ -1,1 +1,20 @@
-<p>list-cat works!</p>
+<div>
+
+    <app-admin-nav></app-admin-nav>
+
+    <div class="list-class" *ngFor="let cat of categories">
+        <div>
+            <button (click)="openDialogEditCat(cat.name,cat.id)" class="editBtn">
+          <mat-icon>edit</mat-icon>
+      </button>
+
+            <button (click)="deleteCat(cat.id)" class="deleteBtn">
+            <mat-icon>delete</mat-icon>
+      </button>
+            <p>
+                Nom: {{cat.name}} <br>
+            </p>
+
+        </div>
+    </div>
+</div>

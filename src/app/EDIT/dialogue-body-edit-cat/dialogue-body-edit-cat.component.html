@@ -1,1 +1,33 @@
-<p>dialogue-body-edit-cat works!</p>
+<h3 mat-dialog-title>Modifier cette catégorie</h3>
+
+<mat-dialog-content>
+
+
+    <form [formGroup]="editCatForm">
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Nom de la catégorie</mat-label>
+                <input matInput placeholder="Entrez le nom de la catégorie" required formControlName="name">
+                <div *ngIf="editCatForm.controls.name.invalid && (editCatForm.controls.name.dirty || editCatForm.controls.name.touched)">
+
+                    <mat-error *ngIf="editCatForm.controls.name.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+
+
+        </p>
+
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button close" (click)="close()">Annuler</button>
+    <button class="mat-raised-button edit" (click)="editCat(editCatForm.value)" [disabled]="!(editCatForm.valid)" [ngClass]="{'disabled': !(editCatForm.valid)}">
+       Modifier
+    </button>
+</mat-dialog-actions>

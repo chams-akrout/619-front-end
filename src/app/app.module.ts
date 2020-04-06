@@ -16,15 +16,18 @@ import { AuthGuard } from "./auth.guard";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatIconModule } from "@angular/material/icon";
-import { MatMenuModule, MatListModule} from "@angular/material";
+import { MatListModule } from "@angular/material/list";
+import { MatMenuModule } from "@angular/material/menu";
+import {MatInputModule} from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
 import { DialogueBodyAddCatComponent } from "./ADD/dialogue-body-add-cat/dialogue-body-add-cat.component";
 import { DialogueBodyAddProductComponent } from "./ADD/dialogue-body-add-product/dialogue-body-add-product.component";
 import { ListCatComponent } from "./list-cat/list-cat.component";
 import { ListProdComponent } from "./list-prod/list-prod.component";
 import { DialogueBodyEditCatComponent } from "./EDIT/dialogue-body-edit-cat/dialogue-body-edit-cat.component";
 import { DialogueBodyEditProductComponent } from "./EDIT/dialogue-body-edit-product/dialogue-body-edit-product.component";
+import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +40,8 @@ import { DialogueBodyEditProductComponent } from "./EDIT/dialogue-body-edit-prod
     DialogueBodyEditCatComponent,
     DialogueBodyEditProductComponent,
     ListCatComponent,
-    ListProdComponent
+    ListProdComponent,
+    AdminNavComponent
   ],
   entryComponents: [
     DialogueBodyEditCatComponent,
@@ -48,12 +52,13 @@ import { DialogueBodyEditProductComponent } from "./EDIT/dialogue-body-edit-prod
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatSelectModule,
+    MatInputModule,
     HttpClientModule,
     BrowserAnimationsModule,
     AngularMaterialModule,
     FormsModule,
     MatDialogModule,
-    MatExpansionModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,

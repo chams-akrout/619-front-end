@@ -1,1 +1,81 @@
-<p>dialogue-body-edit-product works!</p>
+<h3 mat-dialog-title>Modifier ce Produit</h3>
+
+<mat-dialog-content>
+
+
+    <form [formGroup]="editProdForm">
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Nom du produit</mat-label>
+                <input matInput placeholder="Entrez le nom du produit" required formControlName="name">
+                <div *ngIf="editProdForm.controls.name.invalid && (editProdForm.controls.name.dirty || editProdForm.controls.name.touched)">
+
+                    <mat-error *ngIf="editProdForm.controls.name.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+
+
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Fabricateur</mat-label>
+                <input matInput placeholder="Entrez le fabricateur du produit" required formControlName="factory">
+                <div *ngIf="editProdForm.controls.factory.invalid && (editProdForm.controls.factory.dirty || editProdForm.controls.factory.touched)">
+
+                    <mat-error *ngIf="editProdForm.controls.factory.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Image</mat-label>
+                <input matInput placeholder="Insérer le lien de l'image" required formControlName="image">
+                <div *ngIf="editProdForm.controls.image.invalid && (editProdForm.controls.image.dirty || editProdForm.controls.image.touched)">
+
+                    <mat-error *ngIf="editProdForm.controls.image.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Catégorie</mat-label>
+                <mat-select required formControlName="category">
+                    <mat-option *ngFor="let cat of categories" [value]="cat">
+                        {{cat.name}}
+                    </mat-option>
+                </mat-select>
+
+                <div *ngIf="editProdForm.controls.category.invalid && (editProdForm.controls.category.dirty || editProdForm.controls.category.touched)">
+
+                    <mat-error *ngIf="editProdForm.controls.category.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+
+
+        </p>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button close" (click)="close()">Annuler</button>
+    <button class="mat-raised-button edit" (click)="editProd(editProdForm.value)" [disabled]="!(editProdForm.valid)" [ngClass]="{'disabled': !(editProdForm.valid)}">
+        Ajouter
+    </button>
+</mat-dialog-actions>

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material';
+import { FormGroup, FormBuilder, Validators,ReactiveFormsModule } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 import { LoginAuthService } from 'src/app/services/login-auth.service';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-dialogue-body-add-cat',
@@ -25,10 +26,14 @@ export class DialogueBodyAddCatComponent implements OnInit {
   ngOnInit(): void {
   }
   addCat(data) {
-
-
-    this.categoryService.createCat(data,this.loginUser.token);
-    this.dialogRef.close();
+    console.log(data);
+    this.categoryService.createCat(data,this.loginUser.token).subscribe(data => { return true },
+      error => {
+        console.log("Error");
+        return throwError(error);
+      });
+     console.log("ajout avec succés");
+     this.dialogRef.close();
 
   }
   close() {

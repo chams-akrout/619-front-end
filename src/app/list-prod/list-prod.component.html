@@ -1,1 +1,20 @@
-<p>list-prod works!</p>
+<div>
+
+    <app-admin-nav></app-admin-nav>
+
+    <div class="list-class" *ngFor="let prod of products">
+        <div>
+            <button (click)="openDialogEditProd(prod.id,prod.name,prod.factory,prod.image,prod.category)" class="editBtn">
+        <mat-icon>edit</mat-icon>
+    </button>
+
+            <button (click)="deleteProd(prod.id)" class="deleteBtn">
+          <mat-icon>delete</mat-icon>
+    </button>
+            <p>
+                Nom: {{prod.name}} <br>
+            </p>
+
+        </div>
+    </div>
+</div>

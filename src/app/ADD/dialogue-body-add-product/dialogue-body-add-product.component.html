@@ -1,1 +1,81 @@
-<p>dialogue-body-add-product works!</p>
+<h3 mat-dialog-title>Ajouter un Produit</h3>
+
+<mat-dialog-content>
+
+
+    <form [formGroup]="addProdForm">
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Nom du produit</mat-label>
+                <input matInput placeholder="Entrez le nom du produit" required formControlName="name">
+                <div *ngIf="addProdForm.controls.name.invalid && (addProdForm.controls.name.dirty || addProdForm.controls.name.touched)">
+
+                    <mat-error *ngIf="addProdForm.controls.name.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+
+
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Fabricateur</mat-label>
+                <input matInput placeholder="Entrez le fabricateur du produit" required formControlName="factory">
+                <div *ngIf="addProdForm.controls.factory.invalid && (addProdForm.controls.factory.dirty || addProdForm.controls.factory.touched)">
+
+                    <mat-error *ngIf="addProdForm.controls.factory.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Image</mat-label>
+                <input matInput placeholder="Insérer le lien de l'image" required formControlName="image">
+                <div *ngIf="addProdForm.controls.image.invalid && (addProdForm.controls.image.dirty || addProdForm.controls.image.touched)">
+
+                    <mat-error *ngIf="addProdForm.controls.image.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+                <mat-label>Catégorie</mat-label>
+                <mat-select required formControlName="category">
+                    <mat-option *ngFor="let cat of categories" [value]="cat">
+                        {{cat.name}}
+                    </mat-option>
+                </mat-select>
+
+                <div *ngIf="addProdForm.controls.category.invalid && (addProdForm.controls.category.dirty || addProdForm.controls.category.touched)">
+
+                    <mat-error *ngIf="addProdForm.controls.category.errors.required">
+                        Ce champs est obligatoire.
+                    </mat-error>
+
+                </div>
+            </mat-form-field>
+
+
+        </p>
+
+    </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button close" (click)="close()">Annuler</button>
+    <button class="mat-raised-button edit" (click)="addProd(addProdForm.value)" [disabled]="!(addProdForm.valid)" [ngClass]="{'disabled': !(addProdForm.valid)}">
+        Ajouter
+    </button>
+</mat-dialog-actions>

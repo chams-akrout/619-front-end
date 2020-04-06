@@ -24,6 +24,7 @@ h3 {
     margin-right: 15px;
     height: 37%;
     left: 130%;
+    cursor: pointer;
     width: 80%;
     border: 1px solid rgb(0, 0, 0);
     box-shadow: 20px;
@@ -33,6 +34,7 @@ h3 {
 
 .close {
     position: relative;
+    cursor: pointer;
     margin-right: 15px;
     height: 37%;
     left: 35%;

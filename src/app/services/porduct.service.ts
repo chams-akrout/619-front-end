@@ -16,14 +16,14 @@ private produrl='http://localhost:9080/products';
 
   createProd(product: Product,token:any): Observable<Product> {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
-    return this.http.post(this.produrl,JSON.stringify(product), { headers: headers });
+    return this.http.post(this.produrl,product, { headers: headers });
   }
 
 
-  updateProd(product: Product,token:any): Observable<Product> {
+  updateProd(product: any,token:any): Observable<any> {
     const url = `${this.produrl}/${product.id}`;
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
-    return this.http.put(url, JSON.stringify(product), { headers: headers });
+    return this.http.put(url,product, { headers: headers });
 
   }
 
@@ -32,7 +32,7 @@ private produrl='http://localhost:9080/products';
     return this.http.get(this.produrl, { headers: headers });
   }
 
-  getProd(id:number): Observable<Product> {
+  getProd(id:number): Observable<any> {
     const url = `${this.produrl}/${id}`;
     const headers = new HttpHeaders({ 'Access-Control-Allow-Origin':'*' });
     return this.http.get(url, { headers: headers });
@@ -41,7 +41,7 @@ private produrl='http://localhost:9080/products';
   deleteprod(id:number,token:any): Observable<any> {
     const url = `${this.produrl}/${id}`;
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' + token });
-    return this.http.delete(url, { headers: headers });
+    return this.http.delete(url, { headers: headers ,responseType: 'text'});
 
   }
 

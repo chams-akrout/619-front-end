@@ -1,0 +1,48 @@
+.list-class {
+    position: relative;
+    border: 1px solid black;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 5px;
+    top: 90px;
+    width: 500px;
+    left: 30%;
+}
+
+.sidenav {
+    position: relative;
+    top: -980px;
+}
+
+p {
+    position: relative;
+    top: -12px;
+}
+
+.editBtn {
+    position: absolute;
+    display: block;
+    width: 15%;
+    left: 50%;
+    cursor: pointer;
+    top: -34px;
+    margin-top: 55px;
+    background: rgb(86, 196, 123);
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 2px;
+    color: rgb(39, 32, 32) !important;
+}
+
+.deleteBtn {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    width: 15%;
+    left: 70%;
+    top: 15px;
+    background: rgb(197, 84, 84);
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 2px;
+    color: rgb(39, 32, 32) !important;
+}
