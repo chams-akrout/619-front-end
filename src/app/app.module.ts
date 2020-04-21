@@ -28,6 +28,7 @@ import { ListProdComponent } from "./list-prod/list-prod.component";
 import { DialogueBodyEditCatComponent } from "./EDIT/dialogue-body-edit-cat/dialogue-body-edit-cat.component";
 import { DialogueBodyEditProductComponent } from "./EDIT/dialogue-body-edit-product/dialogue-body-edit-product.component";
 import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
+import { ListLocalProductsComponent } from './list-local-products/list-local-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +42,8 @@ import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
     DialogueBodyEditProductComponent,
     ListCatComponent,
     ListProdComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    ListLocalProductsComponent
   ],
   entryComponents: [
     DialogueBodyEditCatComponent,

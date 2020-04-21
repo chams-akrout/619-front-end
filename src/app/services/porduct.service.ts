@@ -48,4 +48,12 @@ export class ProductService {
     });
     return this.http.post(url, barcode, { headers: headers });
   }
+
+  getLocalProductsByString(barcode: string): Observable<any> {
+    const url = "http://localhost:9080/products/stringForeignBarcode";
+    const headers = new HttpHeaders({
+      "Access-Control-Allow-Origin": "*"
+    });
+    return this.http.post(url, barcode, { headers: headers });
+  }
 }

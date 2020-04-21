@@ -123,12 +123,13 @@ export class HomeConsommateurComponent implements OnInit {
       console.log(typeof a);
       console.log(a);
 
-    this.productService.getLocalProducts(a).subscribe(
+    this.productService.getLocalProductsByString(a).subscribe(
       (res) => (this.localProducts = res),
       (error) => {
         console.log("Error");
         return throwError(error);
       }
     );
+ //   this.router.navigate(["/localProducts",a]);
   }
 }
