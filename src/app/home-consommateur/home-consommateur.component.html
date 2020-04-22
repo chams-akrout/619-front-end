@@ -1,14 +1,5 @@
-<!-- <p>connecter en tant que consommateur !!!</p>
-
-<p>{{user.name}}</p>
-<p>{{user.lastName}}</p>
-<p>{{user.score}}</p>
-
-<button (click)="logout()">Se déconnecter</button> -->
-
-
-<mat-toolbar class="toolbar">
-    <mat-toolbar-row>
+<mat-toolbar>
+    <mat-toolbar-row class="toolbar">
 
         <a class="pr">Profile</a>
         <a class="SO" (click)="logout()">Se déconnecter</a>
@@ -16,55 +7,19 @@
     </mat-toolbar-row>
 </mat-toolbar>
 
-<!-- <body>
-
+<div class="text">
     <form [formGroup]="barcodeForm">
-
         <p>
-            <mat-form-field appearance="outline">
-                <mat-label>Code du produit étranger</mat-label>
-                <input matInput placeholder="Entrez le code étranger" required formControlName="barcode">
 
-            </mat-form-field>
-
+            <input class="input" placeholder="Entrez le code étranger" required formControlName="barcode">
 
         </p>
-        <button class="mat-raised-button edit" (click)="listProd(barcodeForm.value)">
-          Ajouter
+        <button class="mat-raised-button searchBtn" (click)="listProd(barcodeForm.value)">
+          Chercher
       </button>
-
+        <p class="or">OU</p>
+        <button class="mat-raised-button scanBtn" (click)="navigateToScan()">
+     Scanner un code
+  </button>
     </form>
-
-    <div class="list-class" *ngFor="let prod of localProducts">
-        <div>
-
-            <p>
-                Nom: {{prod.name}} <br> Factory: {{prod.factory}} <br>
-            </p>
-            <img src="{{prod.image}}">
-        </div>
-    </div>
-
-
-
-</body> -->
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-<section id="container" class="container">
-
-    <div class="wrapper">
-        <div id="result_strip">
-            <ul>
-                <p id="thumbnails">079997000645</p>
-            </ul>
-            <ul class="collector"></ul>
-            <input type="button" (click)="listProd()" value="search" />
-        </div>
-        <div id="interactive" class="viewport"></div>
-    </div>
-</section>
+</div>

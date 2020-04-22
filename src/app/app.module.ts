@@ -29,6 +29,7 @@ import { DialogueBodyEditCatComponent } from "./EDIT/dialogue-body-edit-cat/dial
 import { DialogueBodyEditProductComponent } from "./EDIT/dialogue-body-edit-product/dialogue-body-edit-product.component";
 import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
 import { ListLocalProductsComponent } from './list-local-products/list-local-products.component';
+import { ScanBarcodeComponent } from './scan-barcode/scan-barcode.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,13 +44,15 @@ import { ListLocalProductsComponent } from './list-local-products/list-local-pro
     ListCatComponent,
     ListProdComponent,
     AdminNavComponent,
-    ListLocalProductsComponent
+    ListLocalProductsComponent,
+    ScanBarcodeComponent
   ],
   entryComponents: [
     DialogueBodyEditCatComponent,
     DialogueBodyAddProductComponent,
     DialogueBodyEditProductComponent,
-    DialogueBodyAddCatComponent
+    DialogueBodyAddCatComponent,
+    ListLocalProductsComponent
   ],
   imports: [
     BrowserModule,

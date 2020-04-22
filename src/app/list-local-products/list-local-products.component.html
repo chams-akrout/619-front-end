@@ -1,1 +1,67 @@
-<p>list-local-products works!</p>
+<mat-dialog-content>
+    <div class="list-class" *ngFor="let prod of localProducts">
+        <div class="hvrbox">
+            <img src="{{prod.image}}" alt="Mountains" class="hvrbox-layer_bottom">
+            <div class="hvrbox-layer_top hvrbox-layer_slideright">
+                <div class="hvrbox-text">Produit: {{prod.name}}<br> Marque: {{prod.factory}}
+                    <button class="mat-raised-button minus" (click)="close()">
+                    <mat-icon class="iconM">remove_circle_outline</mat-icon>
+                  </button>
+                    <button class="mat-raised-button plus" (click)="close()">
+                    <mat-icon class="iconP">add_circle_outline</mat-icon>
+                  </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button close" (click)="close()">Fermer</button>
+</mat-dialog-actions>
+
+
+
+
+<!--
+<div class="hvrbox">
+    <img src="assets/images/biscuitSaida.jpg" alt="Mountains" class="hvrbox-layer_bottom">
+    <div class="hvrbox-layer_top hvrbox-layer_slideright">
+        <div class="hvrbox-text">Produit: trtt<br> Marque: trre
+            <button class="mat-raised-button minus" (click)="close()">
+            <mat-icon class="iconM">remove_circle_outline</mat-icon>
+          </button>
+            <button class="mat-raised-button plus" (click)="close()">
+            <mat-icon class="iconP">add_circle_outline</mat-icon>
+          </button>
+        </div>
+    </div>
+
+</div>
+
+<br>
+<div class="hvrbox">
+    <img src="assets/images/biscuitSaida.jpg" alt="Mountains" class="hvrbox-layer_bottom">
+    <div class="hvrbox-layer_top hvrbox-layer_slideright">
+        <div class="hvrbox-text">Produit:
+            <button class="mat-raised-button minus" (click)="close()">
+            <mat-icon>remove_circle_outline</mat-icon>
+          </button>
+        </div>
+    </div>
+
+</div>
+
+<br>
+<div class="hvrbox">
+    <img src="assets/images/biscuitSaida.jpg" alt="Mountains" class="hvrbox-layer_bottom">
+    <div class="hvrbox-layer_top hvrbox-layer_slideright">
+        <div class="hvrbox-text">Produit:
+            <button class="mat-raised-button minus" (click)="close()">
+            <mat-icon>remove_circle_outline</mat-icon>
+          </button>
+        </div>
+    </div>
+
+</div> -->

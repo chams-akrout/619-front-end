@@ -7,6 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import {AuthGuard} from './auth.guard';
 import { ListProdComponent } from './list-prod/list-prod.component';
 import { ListCatComponent } from './list-cat/list-cat.component';
+import { ScanBarcodeComponent } from './scan-barcode/scan-barcode.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,11 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'home/consommateur/scanBarcode',
+    component: ScanBarcodeComponent,
     pathMatch: 'full'
   },
   {
