@@ -56,4 +56,16 @@ export class ProductService {
     });
     return this.http.post(url, barcode, { headers: headers });
   }
+  updateProdAddScore(product: any): Observable<any> {
+    const url = `http://localhost:9080/products/productAddScore/${product.id}`;
+    const headers = new HttpHeaders({  "Access-Control-Allow-Origin": "*"});
+    return this.http.put(url, product, { headers: headers });
+  }
+
+  updateProdSubstractScore(product: any): Observable<any> {
+    const url = `http://localhost:9080/products/productSubstractScore/${product.id}`;
+    const headers = new HttpHeaders({  "Access-Control-Allow-Origin": "*"});
+    return this.http.put(url, product, { headers: headers });
+  }
+
 }

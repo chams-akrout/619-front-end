@@ -18,8 +18,6 @@ export class ListLocalProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.data.barcode);
-    console.log(typeof this.data.barcode);
     switch (typeof this.data.barcode) {
       case "object":
         this.productService.getLocalProducts(this.data.barcode).subscribe(
@@ -45,4 +43,21 @@ export class ListLocalProductsComponent implements OnInit {
   close() {
     this.dialogRef.close("Modification annulée");
   }
+
+  addScore(prod){
+    this.productService.updateProdAddScore(prod).subscribe(data => { return true },
+      error => {
+        console.log("Error");
+        return throwError(error);
+      });
+
+  }
+substractScore(prod){
+  this.productService.updateProdSubstractScore(prod).subscribe(data => { return true },
+    error => {
+      console.log("Error");
+      return throwError(error);
+    });
+
+}
 }

@@ -30,6 +30,7 @@ import { DialogueBodyEditProductComponent } from "./EDIT/dialogue-body-edit-prod
 import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
 import { ListLocalProductsComponent } from './list-local-products/list-local-products.component';
 import { ScanBarcodeComponent } from './scan-barcode/scan-barcode.component';
+import { NgpSortModule } from "ngp-sort-pipe";
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +57,7 @@ import { ScanBarcodeComponent } from './scan-barcode/scan-barcode.component';
   ],
   imports: [
     BrowserModule,
+     NgpSortModule,
     AppRoutingModule,
     MatSelectModule,
     MatInputModule,
