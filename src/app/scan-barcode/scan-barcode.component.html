@@ -5,9 +5,18 @@
 
 <mat-toolbar>
     <mat-toolbar-row class="toolbar">
+        <img src="assets/logo.png" class="logo">
+        <button class="pr" (click)="profile()">
+          <mat-icon>attach_money</mat-icon>
+        </button>
 
-        <a class="pr">Profile</a>
-        <a class="SO" (click)="logout()">Se déconnecter</a>
+        <button class="SO" (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+
+        <button class="coupon" (click)="getCoupon()">
+          <mat-icon>redeem</mat-icon>
+        </button>
 
     </mat-toolbar-row>
 </mat-toolbar>

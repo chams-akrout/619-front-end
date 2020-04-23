@@ -7,6 +7,8 @@ import { ConditionalExpr } from "@angular/compiler";
 import { LoginAuthService } from '../services/login-auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import { ProfileDialogueComponent } from '../profile-dialogue/profile-dialogue.component';
+import { CouponDialogueComponent } from '../coupon-dialogue/coupon-dialogue.component';
 @Component({
   selector: 'app-scan-barcode',
   templateUrl: './scan-barcode.component.html',
@@ -17,12 +19,27 @@ export class ScanBarcodeComponent implements OnInit {
   public user: any = {};
   constructor(  private loginAuthService: LoginAuthService,
     private router: Router,
-    private userService: UserService,public dialog: MatDialog) { }
+    private userService: UserService,public dialog: MatDialog) {
+      this.loginAuthService.isLoggedIn();
+    this.loginUser = JSON.parse(localStorage.getItem("currentUser"));
+     }
   logout() {
     localStorage.removeItem("currentUser");
     this.router.navigate([""]);
   }
 
+  getCoupon(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {name:this.loginUser.user.name,score:this.loginUser.user.score} ;
+    dialogConfig.width = "400px";
+    let dialogRef = this.dialog.open(CouponDialogueComponent, dialogConfig);
+  }
+  profile(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {name:this.loginUser.user.name,lastN:this.loginUser.user.lastName,score:this.loginUser.user.score} ;
+    dialogConfig.width = "400px";
+    let dialogRef = this.dialog.open(ProfileDialogueComponent, dialogConfig);
+  }
 
   ngOnInit(): void {
     this.userService.getUser(this.loginUser.token).subscribe((user) => {

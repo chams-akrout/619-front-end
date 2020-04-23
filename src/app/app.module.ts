@@ -31,6 +31,10 @@ import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
 import { ListLocalProductsComponent } from './list-local-products/list-local-products.component';
 import { ScanBarcodeComponent } from './scan-barcode/scan-barcode.component';
 import { NgpSortModule } from "ngp-sort-pipe";
+import { WelcomeDialogComponent } from './welcome-dialog/welcome-dialog.component';
+import { ProfileDialogueComponent } from './profile-dialogue/profile-dialogue.component';
+import { BonusDialogueComponent } from './bonus-dialogue/bonus-dialogue.component';
+import { CouponDialogueComponent } from './coupon-dialogue/coupon-dialogue.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,14 +50,22 @@ import { NgpSortModule } from "ngp-sort-pipe";
     ListProdComponent,
     AdminNavComponent,
     ListLocalProductsComponent,
-    ScanBarcodeComponent
+    ScanBarcodeComponent,
+    WelcomeDialogComponent,
+    ProfileDialogueComponent,
+    BonusDialogueComponent,
+    CouponDialogueComponent
   ],
   entryComponents: [
     DialogueBodyEditCatComponent,
     DialogueBodyAddProductComponent,
     DialogueBodyEditProductComponent,
     DialogueBodyAddCatComponent,
-    ListLocalProductsComponent
+    ListLocalProductsComponent,
+    WelcomeDialogComponent,
+    ProfileDialogueComponent,
+    BonusDialogueComponent,
+    CouponDialogueComponent
   ],
   imports: [
     BrowserModule,

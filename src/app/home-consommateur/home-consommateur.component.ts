@@ -5,6 +5,9 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserService } from "../services/user.service";
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { ListLocalProductsComponent } from '../list-local-products/list-local-products.component';
+import { WelcomeDialogComponent } from '../welcome-dialog/welcome-dialog.component';
+import { ProfileDialogueComponent } from '../profile-dialogue/profile-dialogue.component';
+import { CouponDialogueComponent } from '../coupon-dialogue/coupon-dialogue.component';
 
 @Component({
   selector: "app-home-consommateur",
@@ -15,7 +18,7 @@ export class HomeConsommateurComponent implements OnInit {
   public loginUser: any = {};
   public user: any = {};
   barcodeForm: FormGroup;
-  isShown: boolean = false ;
+
   constructor(
     private formBuilder: FormBuilder,
     private loginAuthService: LoginAuthService,
@@ -30,10 +33,21 @@ export class HomeConsommateurComponent implements OnInit {
       barcode: ["", [Validators.required]],
     });
   }
-
+  getCoupon(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {name:this.loginUser.user.name,score:this.loginUser.user.score} ;
+    dialogConfig.width = "400px";
+    let dialogRef = this.dialog.open(CouponDialogueComponent, dialogConfig);
+  }
   logout() {
     localStorage.removeItem("currentUser");
     this.router.navigate([""]);
+  }
+  profile(){
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.data = {name:this.loginUser.user.name,lastN:this.loginUser.user.lastName,score:this.loginUser.user.score} ;
+    dialogConfig.width = "400px";
+    let dialogRef = this.dialog.open(ProfileDialogueComponent, dialogConfig);
   }
   ngOnInit(): void {
     this.userService.getUser(this.loginUser.token).subscribe((user) => {

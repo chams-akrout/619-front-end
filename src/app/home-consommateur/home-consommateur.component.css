@@ -1,19 +1,25 @@
 .pr {
-    cursor: pointer;
     position: relative;
+    cursor: pointer;
+    background-color: transparent !important;
+    border: 0px;
     left: 80%;
-    color: #333;
-    font-family: 'Open Sans';
-    font-size: 19px;
 }
 
 .SO {
-    font-family: 'Open Sans';
-    font-size: 19px;
-    cursor: pointer;
     position: relative;
+    cursor: pointer;
+    background-color: transparent !important;
+    border: 0px;
     left: 82%;
-    color: #333;
+}
+
+.coupon {
+    position: relative;
+    cursor: pointer;
+    left: 70%;
+    background-color: transparent !important;
+    border: 0px;
 }
 
 .toolbar {
@@ -29,6 +35,17 @@ form {
     padding: 6px 12px;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.logo {
+    position: relative;
+    width: 10%;
+    left: -1%;
+    height: 80%;
+}
+
+.container {
+    overflow: hidden;
 }
 
 .input {
@@ -61,7 +78,7 @@ form {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     height: 56px;
-    left: 65.4%;
+    left: 67%;
     top: 2px;
     font-size: 19px;
     width: 150px;
@@ -72,7 +89,7 @@ form {
 }
 
 .or {
-    left: 78%;
+    left: 79%;
     top: -40px;
     position: relative;
     font-family: 'Open Sans';
