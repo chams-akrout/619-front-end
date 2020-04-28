@@ -1,9 +1,9 @@
 <mat-dialog-content>
-    <div class="list-class" *ngFor="let prod of localProducts | sortBy: 'desc':'points'">
+    <div class="list-class" *ngFor="let prod of localProducts">
         <div class="hvrbox">
             <img src="{{prod.image}}" alt="Mountains" class="hvrbox-layer_bottom">
             <div class="hvrbox-layer_top hvrbox-layer_slideright">
-                <div class="hvrbox-text">Produit: {{prod.name}}<br> Marque: {{prod.factory}}
+                <div class="hvrbox-text">Produit: {{prod.name}}<br> Marque: {{prod.factory}}<br> Score: {{prod.points}}
                     <button class="mat-raised-button minus" (click)="substractScore(prod)">
                     <mat-icon class="iconM">remove_circle_outline</mat-icon>
                   </button>
