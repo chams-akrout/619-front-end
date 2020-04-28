@@ -1,0 +1,36 @@
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<mat-toolbar>
+    <mat-toolbar-row class="toolbar">
+        <img src="assets/logo.png" class="logo">
+        <button class="pr" (click)="profile()">
+          <mat-icon>attach_money</mat-icon>
+        </button>
+
+        <button class="SO" (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+
+        <button class="coupon" (click)="getCoupon()">
+          <mat-icon>redeem</mat-icon>
+        </button>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<section id="container" class="container">
+
+    <div class="wrapper">
+        <div id="result_strip">
+
+            <p id="thumbnails">689377977445</p>
+
+            <ul class="collector"></ul>
+            <input type="button" (click)="listProdByString()" value="Chercher" class="search" />
+        </div>
+        <div id="interactive" class="viewport"></div>
+    </div>
+</section>

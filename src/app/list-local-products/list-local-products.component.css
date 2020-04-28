@@ -1,0 +1,139 @@
+img {
+    width: 150px;
+    height: 150px;
+}
+
+.hvrbox .hvrbox-layer_slideright {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.hvrbox:hover .hvrbox-layer_slideright,
+.hvrbox.active .hvrbox-layer_slideright {
+    -moz-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+}
+
+.hvrbox,
+.hvrbox * {
+    box-sizing: border-box;
+}
+
+.hvrbox {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    /* max-width: 150%; */
+    height: auto;
+    width: 100%;
+}
+
+
+/* .hvrbox img {
+    max-width: 100%;
+} */
+
+.hvrbox .hvrbox-layer_bottom {
+    display: block;
+}
+
+.hvrbox .hvrbox-layer_top {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(148, 130, 130, 0.6);
+    color: #fff;
+    padding: 15px;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -ms-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+}
+
+.hvrbox:hover .hvrbox-layer_top,
+.hvrbox.active .hvrbox-layer_top {
+    opacity: 1;
+}
+
+.hvrbox .hvrbox-text {
+    text-align: center;
+    font-size: 18px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.hvrbox .hvrbox-text_mobile {
+    font-size: 15px;
+    border-top: 1px solid rgb(179, 179, 179);
+    /* for old browsers */
+    border-top: 1px solid rgba(179, 179, 179, 0.7);
+    margin-top: 5px;
+    padding-top: 2px;
+    display: none;
+}
+
+.hvrbox.active .hvrbox-text_mobile {
+    display: block;
+}
+
+.close {
+    position: relative;
+    cursor: pointer;
+    margin-right: 15px;
+    height: 67%;
+    left: 25%;
+    width: 50%;
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: 20px;
+    color: rgb(39, 32, 32) !important;
+    top: -15%;
+}
+
+.minus {
+    position: relative;
+    cursor: pointer;
+    margin-right: 15px;
+    height: 67%;
+    left: 90%;
+    width: 20%;
+    visibility: hidden;
+    background-color: transparent !important;
+    top: 34px;
+}
+
+.iconM {
+    visibility: visible;
+    color: crimson;
+}
+
+.plus {
+    position: relative;
+    cursor: pointer;
+    margin-right: 15px;
+    height: 67%;
+    left: 30%;
+    width: 20%;
+    visibility: hidden;
+    background-color: transparent !important;
+    top: 34px;
+}
+
+.iconP {
+    visibility: visible;
+    color: rgb(17, 155, 74);
+}

@@ -45,7 +45,6 @@ export class DialogueBodyEditProductComponent implements OnInit {
         console.log("Error");
         return throwError(error);
       });
-     console.log("ajout avec succés");
      this.dialogRef.close();
 
   }

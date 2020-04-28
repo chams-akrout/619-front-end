@@ -20,4 +20,10 @@ export class UserService {
     const headers = new HttpHeaders({ 'Authorization': 'Bearer ' +token });
     return this.http.get('http://localhost:9080/getuser' , { headers: headers });
   }
+
+  updateUserScore(user:any): Observable<any> {
+    const url = `http://localhost:9080/users/updateUserScore/${user.id}`;
+    const headers = new HttpHeaders({  "Access-Control-Allow-Origin": "*"});
+    return this.http.put(url, user, { headers: headers });
+  }
 }

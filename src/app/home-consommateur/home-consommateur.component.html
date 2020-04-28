@@ -1,7 +1,36 @@
-<p>connecter en tant que consommateur !!!</p>
+<div class="container">
+    <mat-toolbar>
+        <mat-toolbar-row class="toolbar">
+            <img src="assets/logo.png" class="logo">
 
-<p>{{user.name}}</p>
-<p>{{user.lastName}}</p>
-<p>{{user.score}}</p>
+            <button class="pr" (click)="profile()">
+              <mat-icon>attach_money</mat-icon>
+            </button>
 
-<button (click)="logout()">Se déconnecter</button>
+            <button class="SO" (click)="logout()">
+              <mat-icon>exit_to_app</mat-icon>
+            </button>
+
+            <button class="coupon" (click)="getCoupon()">
+              <mat-icon>redeem</mat-icon>
+            </button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <div class="text">
+        <form [formGroup]="barcodeForm">
+            <p>
+
+                <input class="input" placeholder="Entrez le code étranger" required formControlName="barcode">
+
+            </p>
+            <button class="mat-raised-button searchBtn" (click)="listProd(barcodeForm.value)">
+          Chercher
+      </button>
+            <p class="or">OU</p>
+            <button class="mat-raised-button scanBtn" (click)="navigateToScan()">
+     Scanner un code
+  </button>
+        </form>
+    </div>
+</div>

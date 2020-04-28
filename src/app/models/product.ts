@@ -9,7 +9,7 @@ export class Product
       public category?: Category,
       public factory?: string,
       public image?: string,
-      public point?: number
+      public points?: number
     ){}
 
 }

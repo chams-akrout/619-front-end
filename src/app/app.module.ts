@@ -28,6 +28,13 @@ import { ListProdComponent } from "./list-prod/list-prod.component";
 import { DialogueBodyEditCatComponent } from "./EDIT/dialogue-body-edit-cat/dialogue-body-edit-cat.component";
 import { DialogueBodyEditProductComponent } from "./EDIT/dialogue-body-edit-product/dialogue-body-edit-product.component";
 import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
+import { ListLocalProductsComponent } from './list-local-products/list-local-products.component';
+import { ScanBarcodeComponent } from './scan-barcode/scan-barcode.component';
+import { NgpSortModule } from "ngp-sort-pipe";
+import { WelcomeDialogComponent } from './welcome-dialog/welcome-dialog.component';
+import { ProfileDialogueComponent } from './profile-dialogue/profile-dialogue.component';
+import { BonusDialogueComponent } from './bonus-dialogue/bonus-dialogue.component';
+import { CouponDialogueComponent } from './coupon-dialogue/coupon-dialogue.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,16 +48,28 @@ import { AdminNavComponent } from './navigation/admin-nav/admin-nav.component';
     DialogueBodyEditProductComponent,
     ListCatComponent,
     ListProdComponent,
-    AdminNavComponent
+    AdminNavComponent,
+    ListLocalProductsComponent,
+    ScanBarcodeComponent,
+    WelcomeDialogComponent,
+    ProfileDialogueComponent,
+    BonusDialogueComponent,
+    CouponDialogueComponent
   ],
   entryComponents: [
     DialogueBodyEditCatComponent,
     DialogueBodyAddProductComponent,
     DialogueBodyEditProductComponent,
-    DialogueBodyAddCatComponent
+    DialogueBodyAddCatComponent,
+    ListLocalProductsComponent,
+    WelcomeDialogComponent,
+    ProfileDialogueComponent,
+    BonusDialogueComponent,
+    CouponDialogueComponent
   ],
   imports: [
     BrowserModule,
+     NgpSortModule,
     AppRoutingModule,
     MatSelectModule,
     MatInputModule,
